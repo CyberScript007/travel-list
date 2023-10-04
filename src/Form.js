@@ -15,6 +15,8 @@ export default function Form({ onSetItems }) {
   const handleSetItem = function (e) {
     e.preventDefault();
 
+    if (!description) return;
+
     onSetItems((item) => [
       ...item,
       { quantity, description, packed: false, id: Date.now() },
